@@ -51,7 +51,7 @@ class SignupForm extends Model
         }
         
         $user = new User();
-        $role = new Role();
+//        $role = new Role();
         $user->username = $this->username;
         $user->email = $this->email;
         $user->rule = 'User';
@@ -60,9 +60,9 @@ class SignupForm extends Model
         $user->generateEmailVerificationToken();
 
         if ($user->save()){
-            $role->user_id = $user->getId();
-            $role->item_name = 'User';
-            $role->save();
+//            $role->user_id = $user->getId();
+//            $role->item_name = 'User';
+//            $role->save();
         }
         return true;
     }
